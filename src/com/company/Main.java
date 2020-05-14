@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static final short MAX_POINTS = 1410;
+
     public static int calculateTotalPoints(int gainedPoints, int currentLevel){
         HashMap<Integer, Integer> levelPoints = LevelPoints.getTable();
         int accumulatedPoints = 0;
@@ -47,10 +49,10 @@ public class Main {
         int currentLevel = getCurrentLevel();
         int gainedPoints = getGainedPoints();
         int totalPoints = calculateTotalPoints(gainedPoints, currentLevel);
-        if (totalPoints == 1410) {
+        if (totalPoints == MAX_POINTS) {
             System.out.println("You can upgrade your brawler to maximum level. Congratulations!");
             System.exit(0);
-        } else if (totalPoints > 1410) {
+        } else if (totalPoints > MAX_POINTS) {
             System.out.println("Maximum points total exceeded, please check again.");
             System.exit(0);
         }
